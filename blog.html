@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebook & Thoughts | Blog</title>
+    <!-- Manggil file CSS khusus blog -->
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+<body>
+
+    <header>
+        <div class="blog-title">~/notes<span style="color: var(--accent);">.log</span></div>
+        <a href="index.html" class="back-to-home">&larr; main_portfolio</a>
+    </header>
+
+    <!-- VIEW 1: DAFTAR ARTIKEL (Di-generate otomatis oleh JS) -->
+    <main id="blog-list-view" class="posts-container">
+        <!-- Kosongin aja, nanti kartu artikelnya muncul di sini -->
+    </main>
+
+    <!-- VIEW 2: ISI ARTIKEL (Dinamis) -->
+    <main id="single-post-view" class="single-post-view">
+        <button class="back-btn" onclick="closePost()">&larr; Kembali ke daftar artikel</button>
+        <article>
+            <div class="post-meta" id="article-date"></div>
+            <h1 id="article-title" style="font-size: 2.2rem; margin-bottom: 20px;"></h1>
+            <div class="post-content" id="article-body"></div>
+        </article>
+    </main>
+
+    <!-- Manggil file JS khusus blog -->
+    <script src="js/blog.js"></script>
+</body>
+</html>

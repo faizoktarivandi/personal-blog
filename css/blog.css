@@ -1,0 +1,130 @@
+/* CSS Variables */
+:root {
+    --bg-color: #0f1115;
+    --surface-color: #1a1d24;
+    --text-main: #e2e8f0;
+    --text-muted: #94a3b8;
+    --accent: #10b981;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.7;
+    padding: 40px 10%;
+}
+
+header {
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blog-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.back-to-home {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.back-to-home:hover {
+    color: var(--accent);
+}
+
+/* Blog List View */
+.posts-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.post-card {
+    background: var(--surface-color);
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+    border: 1px solid transparent;
+}
+
+.post-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.post-meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.post-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.post-excerpt {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Single Post View */
+.single-post-view {
+    display: none;
+    max-width: 700px;
+    margin: 0 auto;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: var(--accent);
+    cursor: pointer;
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.post-content {
+    margin-top: 30px;
+    font-size: 1.1rem;
+    color: #cbd5e1;
+}
+
+.post-content p {
+    margin-bottom: 20px;
+}
+
+.post-content pre {
+    background: #090a0f;
+    padding: 20px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    margin: 25px 0;
+    border-left: 3px solid var(--accent);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

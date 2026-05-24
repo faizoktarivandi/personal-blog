@@ -1,0 +1,14 @@
+{
+  "post-1": {
+    "title": "Migrasi Test Case Manual ke Automation Tanpa Bikin Pusing Tim",
+    "date": "Mei 24, 2026 • 5 min read",
+    "excerpt": "Gimana strategi terbaik buat mencicil regresi manual jadi automation script tanpa mengganggu sprint delivery yang lagi berjalan...",
+    "content": "<p>Salah satu tantangan terbesar waktu berubah role dari QA manual ke automation adalah masalah waktu. Kapan kita coding kalau tiap sprint fiturnya nambah terus?</p><p>Strategi yang gue pake biasanya adalah melakukan <strong>Priority Audit</strong>. Kita gak perlu langsung nge-automate semuanya. Mulai dari yang paling kritikal (P0) kayak alur payment atau login.</p><pre>\n// Contoh skenario P0 di Gherkin\nScenario: Successful payment using main wallet\n  Given user is on checkout page\n  When user selects \"Main Wallet\" as payment method\n  And user clicks \"Pay Now\"\n  Then transaction status should be \"SUCCESS\"</pre><p>Dengan fokus ke P0 dulu, tim tetep bisa deliver fitur baru, dan regression suite kita pelan-pelan ke-built dengan solid.</p>"
+  },
+  "post-2": {
+    "title": "Menjinakkan WebView Context yang Flaky di Appium",
+    "date": "April 12, 2026 • 4 min read",
+    "excerpt": "Tips dan trik handling context switching dari Native ke WebView biar script automation lo gak gampang timeout atau nyasar...",
+    "content": "<p>Ngetes fitur PPOB atau e-wallet yang dalemnya pake WebView itu emang sering bikin senam jantung karena rentan flaky.</p><p>Kuncinya ada di ketepatan waktu pas pindah context. Jangan langsung asumsikan WebView-nya udah ke-load sempurna.</p><p>Biasanya gue bikin helper function khusus buat nungguin sampe nama context WebView-nya bener-bener muncul di getContextHandles() sebelum driver nge-switch context.</p>"
+  }
+}
