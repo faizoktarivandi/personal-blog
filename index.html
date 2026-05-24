@@ -20,14 +20,40 @@
     </nav>
 
     <section id="home">
-        <div class="fade-in">
-            <p class="subtitle">Hi, welcome.</p>
-            <h1>Building robust <br><span class="highlight">automation ecosystems.</span></h1>
-            <p class="subtitle" style="margin-top: 20px;">
-                Software Development Engineer in Test (SDET). Specializing in scalable test automation frameworks, behavior-driven development, and ensuring high-quality releases for mobile and web applications.
-            </p>
-        </div>
-    </section>
+        <div class="fade-in home-content">
+            
+            <div class="home-text">
+                <p class="subtitle">Hi, welcome.</p>
+                <h1>Building robust <br><span class="highlight">automation ecosystems.</span></h1>
+                <p class="subtitle" style="margin-top: 20px;">
+                    Software Development Engineer in Test (SDET). Specializing in scalable test automation frameworks, behavior-driven development, and ensuring high-quality releases for mobile and web applications.
+                </p>
+
+                <a href="assets/CV_SDET.pdf" target="_blank" class="primary-btn">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 8px;"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Download CV
+                </a>
+            </div>
+
+            <div class="home-visual">
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre class="code-body"><code><span class="keyword">Feature:</span> Payment Validation
+
+  <span class="keyword">@P0</span> <span class="keyword">@Automation</span>
+  <span class="keyword">Scenario:</span> Verify successful transaction
+    <span class="step">Given</span> user is on checkout page
+    <span class="step">When</span> user selects <span class="string">"Main Wallet"</span>
+    <span class="step">And</span> user taps <span class="string">"Pay Now"</span>
+    <span class="step">Then</span> transaction status is <span class="string">"SUCCESS"</span></code></pre>
+                </div>
+            </div>
+            
+        </div> </section>
 
     <section id="experience">
         <div class="fade-in">
