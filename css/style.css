@@ -14,6 +14,11 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     scroll-behavior: smooth;
+    /* Aktifin Scroll Snapping vertikal dan wajib (mandatory) pas (snap) */
+    scroll-snap-type: y mandatory; 
+    
+    /* PENTING: Sesuaikan ini dengan tinggi navbar lo biar section-nya gak ketutup navbar pas di-snap */
+    scroll-padding-top: 80px;
 }
 
 body {
@@ -165,6 +170,85 @@ h1, h2 {
 .step { color: #61afef; } /* Warna biru khas code editor */
 .string { color: #98c379; } /* Warna hijau string */
 
+/* === About Section Styles === */
+.about-section {
+    padding-top: 20px; /* Jarak dari Home */
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 2; /* Kasih teks porsi lebih gede */
+}
+
+.about-gallery {
+    flex: 1.5; /* Galeri mini */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Gallery Item Styling (Ala Polaroid/Candid) */
+.gallery-item-wrapper {
+    width: 48%;
+    max-width: 250px;
+    background: rgba(255, 255, 255, 0.03); /* Frame sangat tipis */
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    cursor: crosshair; /* Ganti kursor biar kerasa kayak lagi frame objek */
+}
+
+.gallery-item {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.gallery-caption {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* Hover Effect: Lurus dan Berbayang Accent */
+.gallery-item-wrapper:hover {
+    transform: rotate(0deg) translateY(-5px);
+    box-shadow: 0 15px 30px -10px rgba(16, 185, 129, 0.2);
+}
+
+/* Rotasi Awal (Bikin dinamis ala foto berantakan) */
+.rotated-left {
+    transform: rotate(-3deg);
+}
+
+.rotated-right {
+    transform: rotate(3deg);
+    margin-top: 15px; /* Sedikit mlorot */
+}
+
+/* === Responsif (Layar HP) === */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+    
+    .about-gallery {
+        width: 100%;
+        margin-top: 30px;
+        flex-direction: row; /* Tetap kanan-kiri kalau di HP */
+    }
+}
+
 /* Experience & Stacks Section */
 .grid-container {
     display: grid;
@@ -177,6 +261,28 @@ h1, h2 {
     padding: 30px;
     border-radius: 8px;
     border-left: 3px solid var(--accent);
+}
+
+/* === Tech Stacks Grouping === */
+.tech-desc {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.stack-group {
+    margin-bottom: 20px;
+}
+
+/* Biar grup terakhir gak punya margin bawah berlebih */
+.stack-group:last-child {
+    margin-bottom: 0; 
+}
+
+.stack-title {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    font-weight: 500;
 }
 
 .date-text {
