@@ -20,5 +20,21 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeElements.forEach((element) => {
         observer.observe(element);
     });
-});
 
+    // Hamburger Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    // Toggle menu when hamburger is clicked
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Close menu when a nav link is clicked
+    const navItems = navLinks.querySelectorAll('a');
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+});

@@ -14,11 +14,6 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     scroll-behavior: smooth;
-    /* Aktifin Scroll Snapping vertikal dan wajib (mandatory) pas (snap) */
-    scroll-snap-type: y mandatory; 
-    
-    /* PENTING: Sesuaikan ini dengan tinggi navbar lo biar section-nya gak ketutup navbar pas di-snap */
-    scroll-padding-top: 80px;
 }
 
 body {
@@ -41,6 +36,52 @@ nav {
     z-index: 1000;
 }
 
+/* Styling Ikon Hamburger */
+.hamburger {
+    display: none; /* Sembunyiin di Desktop */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--accent); /* Warna hijau andalan lo */
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Munculin ikon di HP */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px; /* Sesuaikan dengan tinggi navbar lo */
+        right: -100%; /* Umpetin menunya di luar layar sebelah kanan */
+        flex-direction: column;
+        background-color: #0f111a; /* Warna background dark mode lo */
+        width: 100%;
+        text-align: center;
+        transition: 0.3s ease-in-out; /* Animasi mulus pas muncul */
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+        padding: 20px 0;
+        z-index: 999;
+    }
+
+    /* Kelas active yang bakal di-trigger pakai JavaScript */
+    .nav-links.active {
+        right: 0; /* Geser masuk ke dalam layar */
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+}
+
 .logo {
     font-size: 1.2rem;
     font-weight: bold;
@@ -52,6 +93,11 @@ nav {
 .nav-links {
     display: flex;
     gap: 30px;
+    list-style: none;
+}
+
+.nav-links li {
+    list-style: none;
 }
 
 .nav-links a {
