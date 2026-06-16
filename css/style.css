@@ -4,7 +4,7 @@
     --surface-color: #1a1d24;
     --text-main: #e2e8f0;
     --text-muted: #94a3b8;
-    --accent: #10b981; /* Minimalist green accent */
+    --accent: #10b981;
 }
 
 /* CSS Reset */
@@ -36,52 +36,6 @@ nav {
     z-index: 1000;
 }
 
-/* Styling Ikon Hamburger */
-.hamburger {
-    display: none; /* Sembunyiin di Desktop */
-    cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.hamburger .bar {
-    width: 25px;
-    height: 3px;
-    background-color: var(--accent); /* Warna hijau andalan lo */
-    border-radius: 3px;
-    transition: all 0.3s ease;
-}
-
-/* --- RESPONSIVE MOBILE --- */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex; /* Munculin ikon di HP */
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 70px; /* Sesuaikan dengan tinggi navbar lo */
-        right: -100%; /* Umpetin menunya di luar layar sebelah kanan */
-        flex-direction: column;
-        background-color: #0f111a; /* Warna background dark mode lo */
-        width: 100%;
-        text-align: center;
-        transition: 0.3s ease-in-out; /* Animasi mulus pas muncul */
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
-        padding: 20px 0;
-        z-index: 999;
-    }
-
-    /* Kelas active yang bakal di-trigger pakai JavaScript */
-    .nav-links.active {
-        right: 0; /* Geser masuk ke dalam layar */
-    }
-
-    .nav-links li {
-        margin: 15px 0;
-    }
-}
-
 .logo {
     font-size: 1.2rem;
     font-weight: bold;
@@ -90,13 +44,26 @@ nav {
     letter-spacing: 1px;
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--accent);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Navigation Links */
 .nav-links {
     display: flex;
     gap: 30px;
-    list-style: none;
-}
-
-.nav-links li {
     list-style: none;
 }
 
@@ -116,6 +83,39 @@ nav {
     padding: 5px 15px;
     border-radius: 4px;
     color: var(--accent) !important;
+}
+
+/* Responsive Mobile Menu */
+@media (max-width: 768px) {
+    nav {
+        padding: 20px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: -100%;
+        flex-direction: column;
+        background-color: #0f111a;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s ease-in-out;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+        padding: 20px 0;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
 }
 
 /* Sections General */
@@ -149,7 +149,6 @@ h1, h2 {
     color: var(--accent);
 }
 
-/* Layout Home 2 Kolom */
 .home-content {
     display: flex;
     align-items: center;
@@ -164,10 +163,10 @@ h1, h2 {
 .home-visual {
     flex: 1;
     display: flex;
-    justify-content: flex-end; /* Dorong ke kanan */
+    justify-content: flex-end;
 }
 
-/* Mockup Code Window */
+/* Code Window Mockup */
 .code-window {
     background-color: #090a0f;
     border-radius: 8px;
@@ -176,12 +175,12 @@ h1, h2 {
     max-width: 450px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     overflow: hidden;
-    transform: rotate(-2deg); /* Miring dikit biar artistik */
+    transform: rotate(-2deg);
     transition: transform 0.3s ease;
 }
 
 .code-window:hover {
-    transform: rotate(0deg) scale(1.02); /* Balik lurus pas di-hover */
+    transform: rotate(0deg) scale(1.02);
 }
 
 .window-header {
@@ -198,9 +197,17 @@ h1, h2 {
     border-radius: 50%;
 }
 
-.dot.red { background-color: #ff5f56; }
-.dot.yellow { background-color: #ffbd2e; }
-.dot.green { background-color: #27c93f; }
+.dot.red {
+    background-color: #ff5f56;
+}
+
+.dot.yellow {
+    background-color: #ffbd2e;
+}
+
+.dot.green {
+    background-color: #27c93f;
+}
 
 .code-body {
     padding: 20px;
@@ -211,14 +218,23 @@ h1, h2 {
     overflow-x: auto;
 }
 
-/* Syntax Highlighting Colors */
-.keyword { color: var(--accent); font-weight: bold; }
-.step { color: #61afef; } /* Warna biru khas code editor */
-.string { color: #98c379; } /* Warna hijau string */
+/* Syntax Highlighting */
+.keyword {
+    color: var(--accent);
+    font-weight: bold;
+}
 
-/* === About Section Styles === */
+.step {
+    color: #61afef;
+}
+
+.string {
+    color: #98c379;
+}
+
+/* About Section */
 .about-section {
-    padding-top: 20px; /* Jarak dari Home */
+    padding-top: 20px;
 }
 
 .about-container {
@@ -229,27 +245,27 @@ h1, h2 {
 }
 
 .about-text {
-    flex: 2; /* Kasih teks porsi lebih gede */
+    flex: 2;
 }
 
 .about-gallery {
-    flex: 1.5; /* Galeri mini */
+    flex: 1.5;
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-/* Gallery Item Styling (Ala Polaroid/Candid) */
+/* Gallery Items */
 .gallery-item-wrapper {
     width: 48%;
     max-width: 250px;
-    background: rgba(255, 255, 255, 0.03); /* Frame sangat tipis */
+    background: rgba(255, 255, 255, 0.03);
     padding: 8px;
     border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.05);
     text-align: center;
     transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-    cursor: crosshair; /* Ganti kursor biar kerasa kayak lagi frame objek */
+    cursor: crosshair;
 }
 
 .gallery-item {
@@ -266,33 +282,18 @@ h1, h2 {
     font-style: italic;
 }
 
-/* Hover Effect: Lurus dan Berbayang Accent */
 .gallery-item-wrapper:hover {
     transform: rotate(0deg) translateY(-5px);
     box-shadow: 0 15px 30px -10px rgba(16, 185, 129, 0.2);
 }
 
-/* Rotasi Awal (Bikin dinamis ala foto berantakan) */
 .rotated-left {
     transform: rotate(-3deg);
 }
 
 .rotated-right {
     transform: rotate(3deg);
-    margin-top: 15px; /* Sedikit mlorot */
-}
-
-/* === Responsif (Layar HP) === */
-@media (max-width: 768px) {
-    .about-container {
-        flex-direction: column;
-    }
-    
-    .about-gallery {
-        width: 100%;
-        margin-top: 30px;
-        flex-direction: row; /* Tetap kanan-kiri kalau di HP */
-    }
+    margin-top: 15px;
 }
 
 /* Experience & Stacks Section */
@@ -309,7 +310,6 @@ h1, h2 {
     border-left: 3px solid var(--accent);
 }
 
-/* === Tech Stacks Grouping === */
 .tech-desc {
     margin-top: 10px;
     margin-bottom: 25px;
@@ -319,9 +319,8 @@ h1, h2 {
     margin-bottom: 20px;
 }
 
-/* Biar grup terakhir gak punya margin bawah berlebih */
 .stack-group:last-child {
-    margin-bottom: 0; 
+    margin-bottom: 0;
 }
 
 .stack-title {
@@ -392,12 +391,12 @@ h1, h2 {
     transform: translateY(0);
 }
 
-/* Primary Button (CV Download) */
+/* Buttons */
 .primary-btn {
     display: inline-flex;
     align-items: center;
     background-color: var(--accent);
-    color: var(--bg-color); /* Teks jadi gelap biar kontras sama hijau */
+    color: var(--bg-color);
     padding: 12px 26px;
     border-radius: 6px;
     text-decoration: none;
@@ -414,49 +413,10 @@ h1, h2 {
     box-shadow: 0 10px 20px -10px rgba(16, 185, 129, 0.6);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav {
-        padding: 20px;
-    }
-    .grid-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    #home h1 {
-        font-size: 2.5rem;
-    }
-
-    footer {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 20px;
-    }
-    .footer-socials {
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    .home-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .home-visual {
-        justify-content: center;
-        margin-top: 40px;
-        width: 100%;
-    }
-    
-    .code-window {
-        transform: none; /* Jangan dimiringin kalau di layar sempit */
-    }
-}
-
 /* Footer */
 footer {
     padding: 40px 10%;
-    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Garis pemisah tipis banget */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -486,4 +446,52 @@ footer {
 .footer-socials a:hover {
     color: var(--accent);
     transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    #home h1 {
+        font-size: 2.5rem;
+    }
+
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-visual {
+        justify-content: center;
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    .code-window {
+        transform: none;
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-gallery {
+        width: 100%;
+        margin-top: 30px;
+        flex-direction: row;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .footer-socials {
+        justify-content: center;
+        margin-top: 10px;
+    }
 }
